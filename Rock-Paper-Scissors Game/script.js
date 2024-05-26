@@ -22,9 +22,9 @@ function computerPicker() {
 }
 
 function mapping(num) {
-    if (num == 1) {return 'Rock';}
-    else if (num == 2) {return 'Paper';}
-    else if (num == 3) {return 'Scissors';}
+    if (num == 1) {return 'rock';}
+    else if (num == 2) {return 'paper';}
+    else if (num == 3) {return 'scissors';}
 }
 
 function evaluator(computer, user) {
