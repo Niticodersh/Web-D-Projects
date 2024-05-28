@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <title>
+      Rock-Paper-Scissor
+    </title>
+  </head>
+  <body>
+    <p class="title">Rock Paper Scissors</p>
+    <button class="move-button" onclick="
+      computerPicker();
+      evaluator(computer, 1);
+    "><img src="images/rock-emoji.png" class="move-icon"></button>
+    <button class="move-button" onclick = "
+      computerPicker();
+      evaluator(computer, 2);
+    "><img src="images/paper-emoji.png" class="move-icon"></button>
+    <button class="move-button" onclick = "
+      computerPicker();
+      evaluator(computer, 3);
+    "><img src="images/scissors-emoji.png" class="move-icon"></button>
+    <p class="js-result-display result-display"></p>
+    <p class="js-win-loss-tie win-loss-tie"></p>
+    <button class="reset-button" onclick="
+      scoreboard.Wins=0;
+      scoreboard.Losses=0;
+      scoreboard.Ties=0;
+      win_loss_tie_info()
+      reset_result_display();
+      localStorage.setItem('scoreboard',JSON.stringify(scoreboard));
+      // localStorage.removeItem('scoreboard')
+
+    ">Reset Score</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
