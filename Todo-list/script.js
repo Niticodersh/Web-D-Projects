@@ -1,5 +1,7 @@
-let todo = [];
+let todo = JSON.parse(localStorage.getItem('Todo-list'))||[];
 let show = ''
+show_list(todo)
+
 function HandleInput(event){
   if(event.key == 'Enter')
     {
@@ -21,6 +23,7 @@ function addTodo()
 {
   // console.log(document.querySelector('.js-input').value)
   todo.push({work:document.querySelector('.js-input').value, dueDate: document.querySelector('.js-input-date').value})
+  localStorage.setItem('Todo-list', JSON.stringify(todo));
   console.log(todo);
   document.querySelector('.js-input').value='';
   document.querySelector('.js-input-date').value='';
@@ -31,11 +34,13 @@ function resetTodo()
 {
   document.querySelector('.js-print').innerHTML = ``;
   todo = [];
+  localStorage.setItem('Todo-list', JSON.stringify(todo));
 }
 
 function delete_work(index)
 {
   todo.splice(index, 1);
   console.log(todo);
+  localStorage.setItem('Todo-list', JSON.stringify(todo));
   show_list(todo)
 }
